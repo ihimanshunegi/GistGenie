@@ -3,15 +3,47 @@ body{
     width: 400px;
     height: auto;
 }
-#loader {
+
+
+.loader {
+    padding: 50px 0;
+    text-align: center;    
+}
+.loader span {
     display: inline-block;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin 2s linear infinite;
-    margin-right: 10px;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 10px;
+    animation: loader 0.8s infinite alternate;
+    -webkit-animation: loader 0.8s infinite alternate;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.loader span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.loader span:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+@keyframes loader {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+}
+
+
+
+.hidden {
+   display: none;
 }
 
 @keyframes spin {
@@ -19,6 +51,54 @@ body{
     100% { transform: rotate(360deg); }
 }
 
-.hidden {
-    visibility: hidden;
+.textBox{
+
+    height: 120px;
+    border: rgb(27, 27, 27) solid 1px;
+    margin: 10px ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    scroll-behavior: smooth;
+
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #878787; 
+}
+.copyBtn{
+    background-color: rgb(0, 119, 255);
+    border: 0px;
+    position: relative;
+    left: 90%;
+}
+
+.copyButton {
+    padding: 1em;
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: #0C4D8B;
+    color: white;
+    position: relative;
+    transition: .2s;
+    
+    &.active {
+      background: #061A40;
+    }
+  }
+  
