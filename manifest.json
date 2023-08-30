@@ -1,24 +1,30 @@
 {
-    "name": "GistGeniie",
+    "name": "GistGenie",
     "version": "1.0",
     "description": "Simplify web content understanding with this Chrome plugin that employs ChatGPT for instant, professional-grade summaries.",
-    "manifest_version": 3,  
+    "manifest_version": 3,
     "permissions": [
         "activeTab",
         "scripting",
         "storage"
     ],
     "icons":{
-        "16": "icons/icon16.png",
-        "32": "icons/icon32.png",
-        "64": "icons/icon64.png",
-        "128": "icons/icon128.png"
+        "16": "assets/icons/icon16.png",
+        "32": "assets/icons/icon32.png",
+        "64": "assets/icons/icon64.png",
+        "128": "assets/icons/icon128.png"
     },
     "action":{
         "default_popup": "popup.html"
     },
     "background":{
-        "service_worker": "background.js"
-    }
+        "service_worker": "assets/js/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["assets/js/content.js"]
+      }
+    ]
 
 }

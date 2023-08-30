@@ -3,29 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
 </head>
 <body>
- 
-    <h1>GistGenie</h1>
+    <header>
+        <img src="assets/icons/icon32.png" alt="icon" class="icon">
+        <h1>GistGenie</h1>
+    </header>
+    
     <h2>Select Summary Type:</h2>
-  <select id="summaryType">
-    <option value="general">General Summary</option>
-    <option value="pointwise">Point-wise Summary</option>
-  </select>
-  <button class="summarizeBtn">Summarize</button>
-  <div class="textBox">
-    <div id="loader" class="loader hidden">
-      <span></span>
-      <span></span>
-      <span></span>
-  </div>
-  
-    <div class="summary" ></div>
-  </div>
-  <button class="copyButton">Copy</button>
-  <script src="popup.js"></script>
+    <select id="summaryType">
+        <option value="general">General Summary</option>
+        <option value="pointwise">Point-wise Summary</option>
+    </select>
+    <button class="summarizeBtn">Summarize</button>
+
+    <div class="textBox">
+        <div id="loader" class="loader hidden">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="summary"></div>
+    </div>
+    <button class="copyButton">Copy</button>
+    
+    <footer>
+        <a href="https://www.linkedin.com/in/ihimanshunegi/" target="_blank"><i class="ri-linkedin-box-line footerIcon"></i></a>
+        <a href="https://github.com/ihimanshunegi" target="_blank"><i class="ri-github-line footerIcon"></i></a>
+        <h3>Created by Himanshu Negi</h3>
+    </footer>
+
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/content.js"></script>
+    <script src="assets/js/cacheModule.js"></script>
+    <script src="assets/js/popup.js"></script>
 </body>
 </html>
