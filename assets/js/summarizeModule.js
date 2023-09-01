@@ -23,8 +23,8 @@ window.summarizeModule = {
 
         // Generate prompt based on summary type
         const prompt = summaryType === 'general'
-            ? `Instructions: Summarize this content concisely in ${lang} language with correct grammar...`
-            : `Summary Mode: Bullet-Points in ${lang} language with correct grammar\n\nInstructions: Summarize the content in bullet-point format`;
+            ? `Please provide a concise summary in ${lang} language with correct grammar for the following content. Focus on capturing the essential points and key insights. Ensure the summary maintains clarity and coherence. If any information is irrelevant, feel free to omit it. Here is the content to be summarized:`
+            : `Please summarize the following content in concise bulleted points in ${lang}. Include the most important details and key takeaways. Use clear and brief sentences. If any information is not relevant, you can omit it. Here is the content to summarize:`;
         
         // Prepare the API request body
         const apiRequestBody = {

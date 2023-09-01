@@ -56,8 +56,6 @@ async function handleSummarize() {
         }
     } catch (error) {
         window.errorModule.showError(error);
-    } finally {
-        loader.classList.add("hidden");
     }
 }
 
@@ -78,12 +76,15 @@ function isSpecialPage(url) {
 }
 
 function displaySummary(summary) {
+    loader.classList.add("hidden");
     summaryOutput.classList.remove("hidden");
     summaryOutput.innerHTML = summary;
 }
 
 async function saveAndDisplaySummary(tabId, tabUrl, summaryType, summaryLang, summary) {
     await window.cacheModule.saveSummaryToCache(tabId, tabUrl, summaryType, summaryLang, summary);
+    loader.classList.add("hidden");
+    summaryOutput.classList.remove("hidden");
     await showTypingEffect(summary, summaryOutput, summaryLang);
 }
 
