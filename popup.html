@@ -3,42 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GistGenie</title>
 
-    <title>Document</title>
+    <!-- Include Remixicon fonts -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Link to the CSS file for styling -->
     <link rel="stylesheet" href="assets/css/popup.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <img src="assets/icons/icon32.png" alt="icon" class="icon">
+        <img src="assets/icons/icon128.png" alt="icon" class="icon">
         <h1>GistGenie</h1>
     </header>
-    
+
+    <!-- Select Summary Type Section -->
     <h2>Select Summary Type:</h2>
     <select id="summaryType">
         <option value="general">General Summary</option>
         <option value="pointwise">Point-wise Summary</option>
     </select>
-    <button class="summarizeBtn">Summarize</button>
 
+    <!-- Select Summary Language Section -->
+    <select id="summaryLang">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="ja">Japanese</option>
+        <option value="es">Spanish</option>
+    </select>
+
+    <!-- Summarize Button Section -->
+    <button class="summarizeBtn"><i class="ri-magic-line"></i>Summarize</button>
+
+    <!-- Text Box for Summary Output -->
     <div class="textBox">
+        <!-- Error Message Section -->
+        <div class="error"></div>
+        
+        <!-- Loader Animation (Hidden by Default) -->
         <div id="loader" class="loader hidden">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <div class="summary"></div>
+        
+        <!-- Summary Output Section -->
+        <div lang='en' class="summary"></div>
     </div>
+
+    <!-- Copy Button for Copying Summary -->
     <button class="copyButton">Copy</button>
     
+    <!-- Footer Section -->
     <footer>
+        <!-- LinkedIn Link -->
         <a href="https://www.linkedin.com/in/ihimanshunegi/" target="_blank"><i class="ri-linkedin-box-line footerIcon"></i></a>
+        
+        <!-- GitHub Link -->
         <a href="https://github.com/ihimanshunegi" target="_blank"><i class="ri-github-line footerIcon"></i></a>
+        
+        <!-- Created By -->
         <h3>Created by Himanshu Negi</h3>
     </footer>
 
-    <script src="assets/js/background.js"></script>
+    <!-- JavaScript Modules -->
+    <script src="assets/js/errorModule.js"></script>
     <script src="assets/js/content.js"></script>
+    <script src="assets/js/summarizeModule.js"></script>
     <script src="assets/js/cacheModule.js"></script>
     <script src="assets/js/popup.js"></script>
 </body>
